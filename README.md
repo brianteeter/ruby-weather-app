@@ -1,24 +1,13 @@
-# README
+# Ruby Weather App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose
 
-Things you may want to cover:
+This is a simple project to fulfill an assignment coding interview.  It is not meant for reuse or as an example.
 
-* Ruby version
+## Functionality
 
-* System dependencies
+This app will provide a simple ui where you can enter an address or location, and once submitted it will return a weather report for said location.
 
-* Configuration
+The app will cache weather for a locale for a brief period of time to reduce requests and costs for using the extenral APIs.  
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO: How to use.
