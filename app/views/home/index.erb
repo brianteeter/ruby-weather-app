@@ -25,16 +25,26 @@
       <p>&nbsp;</p>
     </div>
     <div class="col-sm-8">
-      <form method="get" action="/get_weather">
-        <div class="form-group">
-          <label for="address">Enter an Address:</label>
-          <input class="form-control" type="text" name="address"/>
+      <div class="card">
+        <div class="card-body">
+
+          <h5 class="card-title">Get the Current Weather</h5>
+          <hr/>
+
+          <form method="get" action="/get_weather">
+            <div class="form-group">
+              <label for="address">Enter an Address or Location:</label>
+              <input class="form-control" type="text" name="address"/>
+            </div>
+            <div class="form-group text-center">
+              <p>&nbsp;</p>
+              <button type="submit" class="btn btn-primary">Get Weather Report</button>
+            </div>
+          </form>
+
         </div>
-        <div class="form-group text-center">
-          <p>&nbsp;</p>
-          <button type="submit" class="btn btn-primary">Get Weather Report</button>
-        </div>
-      </form>
+
+      </div>
     </div>
     <div class="col-sm-2">
       <p>&nbsp;</p>

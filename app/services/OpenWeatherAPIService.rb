@@ -14,7 +14,7 @@ class OpenWeatherAPIService
       return nil
     end
 
-    request_url = API_BASE_URL + "lat=" + lat.to_s + "&lon=" + long.to_s + "&appid=" + ENV['OPENWEATHER_API_KEY']
+    request_url = API_BASE_URL + "lat=" + lat.to_s + "&lon=" + long.to_s + "&appid=" + ENV['OPENWEATHER_API_KEY'] + "&units=imperial"
     response = HTTParty.get(request_url)
 
   end

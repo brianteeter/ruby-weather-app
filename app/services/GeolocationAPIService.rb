@@ -11,7 +11,8 @@ class GeolocationAPIService
       return nil
     end
 
-    response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=1520 Gulf Blvd, Clearwater Beach, FL 33767&key=" + ENV['GOOGLE_GEOLOCATION_API_KEY'])
+    response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address +
+                              "&key=" + ENV['GOOGLE_GEOLOCATION_API_KEY'], format: :json)
 
   end
 end

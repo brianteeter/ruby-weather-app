@@ -78,3 +78,5 @@ gem "bootstrap", "~> 5.3"
 gem "sassc-rails", "~> 2.1"
 
 gem "simple_form", "~> 5.2"
+
+gem "jquery-rails", "~> 4.6"
