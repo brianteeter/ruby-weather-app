@@ -36,20 +36,72 @@
           <div class="card">
             <div class="card-body">
 
-              <h5 class="card-title">Weather Report</h5>
-              <h6 class="card-subtitle mb-2 text-muted"> <%= @address %> </h6>
-
-              <p><%= @geolocation_result.to_s %></p>
+              <h5 class="card-title">Weather Report for: '<%= @address %>' </h5>
 
               <hr/>
 
-              <p><%= @openweather_result.to_s %></p>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Current Weather</h5>
+                      <div class="text-center">
+                        <% if (@openweather_result['current']['weather'][0]['icon']) %>
+                          <img src="https://openweathermap.org/img/wn/<%= @openweather_result['current']['weather'][0]['icon'] %>@2x.png"/>
+                        <% end %>
+                      </div>
+                      <ul>
+                        <li>Current Temp: <%= @openweather_result['current']['temp'] %> &deg; F </li>
+                        <li>Conditions: <%= @openweather_result['current']['weather'][0]['main'] %></li>
+                        <li>Wind:
+                          <ul>
+                            <li>Speed: <%=  @openweather_result['current']['wind_speed'] %> mph</li>
+                            <li>Gusts: <%=  @openweather_result['current']['wind_gust'] %> mph</li>
+                            <li>Direction: <%=  @openweather_result['current']['wind_deg'] %> &deg;</li>
+                          </ul>
+                        </li>
+                        <br/>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <% for day in 0..6 do %>
+
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= Time.at(@openweather_result['daily'][day]['dt']).to_date.strftime("%B %d, %Y") %></h5>
+                        <div class="text-center">
+                          <% if (@openweather_result['daily'][day]['weather'][0]['icon']) %>
+                            <img src="https://openweathermap.org/img/wn/<%= @openweather_result['daily'][day]['weather'][0]['icon'] %>@2x.png"/>
+                          <% end %>
+                        </div>
+                        <ul>
+                          <li>High Temp: <%=@openweather_result['daily'][day]['temp']['max'] %> &deg; F </li>
+                          <li>Low Temp: <%=@openweather_result['daily'][day]['temp']['min'] %> &deg; F </li>
+                          <li>Conditions: <%= @openweather_result['daily'][day]['weather'][0]['main'] %></li>
+                          <li>Wind:
+                            <ul>
+                              <li>Speed: <%=  @openweather_result['daily'][day]['wind_speed'] %> mph</li>
+                              <li>Gusts: <%=  @openweather_result['daily'][day]['wind_gust'] %> mph</li>
+                              <li>Direction: <%=  @openweather_result['daily'][day]['wind_deg'] %> &deg;</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+              </div>
+
+
+              <!-- <p><%= @geolocation_result.to_s %></p> -->
+
+              <!-- <p><%= @openweather_result.to_s %></p> -->
 
               <hr/>
-
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="/" class="card-link">Get Another Weather Report</a>
-
             </div>
           </div>
 

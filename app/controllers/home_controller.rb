@@ -20,6 +20,8 @@ class HomeController < ApplicationController
 
     else
 
+      @address = params['address']
+
       # ------------------------------------------------------------------------------------
       # Attempt to geolocate whatever was provided.  If successful, we should get a
       # lat/long to use to get weather.  If not, we throw back an error:
