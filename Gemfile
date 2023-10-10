@@ -72,3 +72,9 @@ group :test do
 end
 
 gem "httparty", "~> 0.21.0"
+
+gem "bootstrap", "~> 5.3"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "simple_form", "~> 5.2"

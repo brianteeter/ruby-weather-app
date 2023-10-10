@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get 'test_external_apis/test_geolocation', to: 'test_external_ap_is#test_geoapi_api'
+  get '/', to: 'home#index'
+  get '/get_weather', to: 'home#get_weather'
+
+  get 'test_external_apis/test_geolocation', to: 'test_external_apis#test_geolocation_api'
+  get 'test_external_apis/test_openweather', to: 'test_external_apis#test_openweather_api'
 
 end
