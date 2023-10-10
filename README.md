@@ -20,7 +20,7 @@ or you could just enter:
 The White House
 ```
 
-and the app will do its best to interpret your location and return the current weather, as well as a 7 day forecast.
+and the app will do its best to interpret your location and return the current weather, as well as a 7 day forecast.  If it cannot find the location, or get the weather for that location an error will be displayed.  
 
 ## Services Used
 
@@ -37,10 +37,11 @@ or by supplying the same named environment variables as you see fit in your envi
 
 ## Caching
 
-The app will cache weather for a locale for up to 30 minutes.  The cachine for this app uses specific 
-latitude and longitude coordinates for its caching.  This differed from the initiall requested requirements which requested 
-caching using ZIP codes.  The reason for deviating is that international addresses don't always have ZIP codes - but the do always
-have latitude and longitude.
+The app will cache weather for a locale for up to 30 minutes.  The caching for this app uses specific 
+latitude and longitude coordinates for its caching.  
+
+This differs from the initial requested requirements which requested caching using ZIP codes.  The reason for deviating is that international addresses don't always have ZIP codes - but the do always
+have latitude and longitude.  A potential weakness of this approach is that a "near" address won't necessarily hit the cache.  For example, two addresses in the same town will have different lat/longs but may have different zip codes.  This could be addressed with geofencing or other techniques but was not addressed in this simple example.
 
 
 ## Note
